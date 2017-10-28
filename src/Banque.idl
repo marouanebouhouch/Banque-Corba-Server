@@ -1,0 +1,12 @@
+module BanqueCorba{
+    struct Compte{
+        long code;
+        double solde;
+    };
+    typedef sequence<Compte> comptes;
+    interface IBanqueRemote{
+        double conversion(in double montant);
+        Compte getCompte(in long code);
+        comptes getComptes();
+    };
+};
